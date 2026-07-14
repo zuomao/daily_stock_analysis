@@ -27,6 +27,7 @@ type SnapshotQuery = {
   accountId?: number;
   asOf?: string;
   costMethod?: PortfolioCostMethod;
+  includeRealtime?: boolean;
 };
 
 type FxRefreshQuery = {
@@ -66,6 +67,9 @@ function buildSnapshotParams(query: SnapshotQuery): Record<string, string | numb
   }
   if (query.costMethod) {
     params.cost_method = query.costMethod;
+  }
+  if (query.includeRealtime !== undefined) {
+    params.include_realtime = query.includeRealtime ? 'true' : 'false';
   }
   return params;
 }
@@ -118,6 +122,11 @@ export const portfolioApi = {
       owner_id: payload.ownerId,
     });
     return toCamelCase<PortfolioAccountItem>(response.data);
+  },
+
+  async deleteAccount(accountId: number): Promise<PortfolioDeleteResponse> {
+    const response = await apiClient.delete<Record<string, unknown>>(`/api/v1/portfolio/accounts/${accountId}`);
+    return toCamelCase<PortfolioDeleteResponse>(response.data);
   },
 
   async getSnapshot(query: SnapshotQuery = {}): Promise<PortfolioSnapshotResponse> {

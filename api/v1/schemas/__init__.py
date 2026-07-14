@@ -93,6 +93,8 @@ from api.v1.schemas.portfolio import (
     PortfolioImportBrokerItem,
     PortfolioImportBrokerListResponse,
     PortfolioFxRefreshResponse,
+    PortfolioDecisionSignalRiskBlock,
+    PortfolioDecisionSignalRiskItem,
     PortfolioRiskResponse,
 )
 from api.v1.schemas.alerts import (
@@ -106,6 +108,22 @@ from api.v1.schemas.alerts import (
     AlertRuleUpdateRequest,
     AlertTriggerItem,
     AlertTriggerListResponse,
+)
+from api.v1.schemas.decision_signals import (
+    DecisionProfile,
+    DecisionSignalCreateRequest,
+    DecisionSignalFeedbackItem,
+    DecisionSignalFeedbackRequest,
+    DecisionSignalItem,
+    DecisionSignalListResponse,
+    DecisionSignalMutationResponse,
+    DecisionSignalOutcomeItem,
+    DecisionSignalOutcomeListResponse,
+    DecisionSignalOutcomeRunRequest,
+    DecisionSignalOutcomeRunResponse,
+    DecisionSignalOutcomeStatsBucket,
+    DecisionSignalOutcomeStatsResponse,
+    DecisionSignalStatusUpdateRequest,
 )
 
 __all__ = [
@@ -189,6 +207,8 @@ __all__ = [
     "PortfolioImportBrokerItem",
     "PortfolioImportBrokerListResponse",
     "PortfolioFxRefreshResponse",
+    "PortfolioDecisionSignalRiskBlock",
+    "PortfolioDecisionSignalRiskItem",
     "PortfolioRiskResponse",
     # alerts
     "AlertDeleteResponse",
@@ -201,4 +221,19 @@ __all__ = [
     "AlertRuleUpdateRequest",
     "AlertTriggerItem",
     "AlertTriggerListResponse",
+    # decision signals
+    "DecisionProfile",
+    "DecisionSignalCreateRequest",
+    "DecisionSignalFeedbackItem",
+    "DecisionSignalFeedbackRequest",
+    "DecisionSignalItem",
+    "DecisionSignalListResponse",
+    "DecisionSignalMutationResponse",
+    "DecisionSignalOutcomeItem",
+    "DecisionSignalOutcomeListResponse",
+    "DecisionSignalOutcomeRunRequest",
+    "DecisionSignalOutcomeRunResponse",
+    "DecisionSignalOutcomeStatsBucket",
+    "DecisionSignalOutcomeStatsResponse",
+    "DecisionSignalStatusUpdateRequest",
 ]
